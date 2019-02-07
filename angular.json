@@ -133,6 +133,41 @@
           }
         }
       }
+    },
+    "table-component": {
+      "root": "projects/table-component",
+      "sourceRoot": "projects/table-component/src",
+      "projectType": "library",
+      "prefix": "enl",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/table-component/tsconfig.lib.json",
+            "project": "projects/table-component/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/table-component/src/test.ts",
+            "tsConfig": "projects/table-component/tsconfig.spec.json",
+            "karmaConfig": "projects/table-component/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/table-component/tsconfig.lib.json",
+              "projects/table-component/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "component-lib-app"
