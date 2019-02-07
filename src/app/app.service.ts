@@ -16,5 +16,9 @@ export class DataService {
             .map((response: Response) => <any[]>response.json()).toPromise();
         }
     }    
+    getRiverDetails: (riverCode: string) => Promise<any> = (riverCode: string) => {
+        return this.http.get(environment.baseUrl + '/api/RiverDetails?riverCode=' + riverCode + "&code=" + environment.detailsKeyCode)
+        .map((response: Response) => <any>response.json()).toPromise();
+    }    
 
 }

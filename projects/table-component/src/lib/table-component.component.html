@@ -1,52 +1,23 @@
 <table >
     <thead>
       <tr>
-        <td class='popover-wrapper'>
-          <div>
-            <div>
-              <span>column1</span>
-            </div>  
-            <div class='popover'>data coming soon</div>
-  
-          </div>
-        </td>
-        <td class='popover-wrapper'>
-          <div>
-            column2
-          </div>  
+        <td *ngFor="let a of headers" class='popover-wrapper'>
+          <span>{{a.name}}</span>
           <div class="popover">
-            <ul style='list-style: none'>
-              <li>one</li>
-              <li>two</li>
-              <li>three</li>
-  
-            </ul>
+            <input type="text">
+            <a href="">Sort Ascending</a>
+            <a href="">Sort Descending</a>
           </div>
-        </td>
-        <td class='popover-wrapper'>
-          <div><span>column3</span></div>
-          <div class="popover">
-            <span>working on leveling out the columns</span>
-          </div>
-          
-        </td>
-        <td class='popover-wrapper'>
-          <div>
-            column4
-          </div>  
-          <div class="popover">
-            <ul style='list-style: none'>
-              <li>one</li>
-              <li>two</li>
-              <li>three</li>
-  
-            </ul>
-          </div>
-        </td>      
+        </td>   
       </tr>
     </thead>
     <tbody>
-      <tr></tr>
+      <tr *ngFor='let x of data'>
+          <td *ngFor='let key of objectKeys(x)'>
+            <span>{{x[key]}}</span>
+          </td>
+
+      </tr>
     </tbody>
   </table>
   

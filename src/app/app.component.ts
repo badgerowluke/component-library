@@ -9,12 +9,19 @@ import { DataService } from './app.service';
 export class AppComponent implements OnInit  {
   title = 'component-lib-app';
   data:any[];
+  otherData:any[];
+
   constructor(private stuff: DataService){}
   ngOnInit(){
     this.data = [];
-    this.stuff.getAllUSRivers(null).then((response) =>{
+    this.stuff.getAllUSRivers("gauley").then((response) =>{
+
       this.data = response;
+
     });
+    this.stuff.getRiverDetails("03189600").then((response) =>{
+      this.otherData = response.riverData;
+    })
   }
 
 }
