@@ -1,23 +1,40 @@
-<table >
-    <thead>
-      <tr>
-        <td *ngFor="let a of headers" class='popover-wrapper'>
-          <span>{{a.name}}</span>
-          <div class="popover">
-            <input type="text">
-            <a href="">Sort Ascending</a>
-            <a href="">Sort Descending</a>
-          </div>
-        </td>   
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor='let x of data'>
-          <td *ngFor='let key of objectKeys(x)'>
-            <span>{{x[key]}}</span>
-          </td>
-
-      </tr>
-    </tbody>
-  </table>
-  
+<div>
+  <div style-='width:95%;position:absolute;height:100%;top:0em;'>
+    <table >
+        <thead>
+          <tr>
+            <th *ngFor="let a of headers" 
+            class='popover-wrapper' 
+            [ngClass]="!a.visible ? 'hidden' : 'visible'">
+              <span>{{a.name}}</span>
+              <div class="popover">
+                <input type="text">
+                <a href="">Sort Ascending</a>
+                <a href="">Sort Descending</a>
+              </div>
+            </th>   
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let x of data'>
+              <td *ngFor='let key of objectKeys(x)' 
+                [ngClass]="headers[objectKeys(x).indexOf(key)].visible ? 'visible': 'hidden'">
+                <span>{{x[key]}}</span>
+              </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+    
+  <div style='width:5%;position:absolute;height:100%;top:0em;'>
+      <button class='popover-wrapper' style='height:48px;text-align:center;vertical-align:middle;'>
+        <span>Click Me</span>
+        <div class="popover">
+          <ul style="list-style: none;" *ngFor='let a of headers'>
+            <li><input type="checkbox" [(ngModel)]="a.visible" ></li>  
+            <li>{{a.name}}</li>
+          </ul>
+        </div>
+      </button>
+  </div>
+</div>

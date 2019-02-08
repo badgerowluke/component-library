@@ -10,6 +10,7 @@ export class TableComponent implements OnInit, OnChanges {
   @Input() data: any[];
   headers: any[];
   objectKeys = Object.keys;
+
   constructor(private service:TableComponentService) { }
 
   ngOnInit() {
@@ -23,16 +24,19 @@ export class TableComponent implements OnInit, OnChanges {
     console.log(this.headers);
   }
   parseDataHeaders :() => void = () => {
-    const schemaObj = this.data[0];
+    if(this.data){
+      const schemaObj = this.data[0];
+  
+      let heads = [];
 
-    let heads = [];
+      for(var key in schemaObj){
+        heads.push({name:key.toUpperCase(), visible:true});
+      }
 
-    for(var key in schemaObj){
-      console.log(key)
-      heads.push({"name":key.toUpperCase()});
+      this.headers = heads;
+
     }
-    console.log(heads)
-    this.headers = heads;
   }
+
 
 }

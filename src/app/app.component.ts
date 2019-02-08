@@ -19,9 +19,9 @@ export class AppComponent implements OnInit  {
       this.data = response;
 
     });
-    this.stuff.getRiverDetails("03189600").then((response) =>{
-      this.otherData = response.riverData;
-    })
+    // this.stuff.getRiverDetails("03189600").then((response) =>{
+    //   this.otherData = response.riverData;
+    // })
   }
 
 }

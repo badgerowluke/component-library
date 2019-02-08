@@ -1,5 +1,12 @@
 table {
-    padding: 0 5% 5% 5%;
+    // padding: 0 5% 5% 5%;
+    width: 65%;
+}
+.hidden {
+    visibility: hidden;
+}
+.visible {
+    visibility: visible;
 }
 .popover {
     visibility:hidden;
@@ -12,7 +19,7 @@ table {
     // left:35%;
     top: -30px;
     border-style: solid;
-    border-width: 0 10px 10px 10px;
+    // border-width: 0 10px 10px 10px;
     border-color: transparent transparent #bfbfbf transparent;
     transition-duration: 0.3s;
     transition-property: transform;
@@ -34,7 +41,7 @@ table {
     padding:2px;
     // padding:8px;
     // left:-58px;
-    min-width:124px;
+    // min-width:124px;
 
     box-shadow: 0px 5px 12px 2px gray;
 } 

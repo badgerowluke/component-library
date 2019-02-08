@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { TableComponent } from './table-component.component';
 import { CommonModule } from '@angular/common';
 
@@ -7,7 +8,8 @@ import { CommonModule } from '@angular/common';
     TableComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     TableComponent
