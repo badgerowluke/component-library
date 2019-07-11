@@ -14,14 +14,14 @@ export class AppComponent implements OnInit  {
   constructor(private stuff: DataService){}
   ngOnInit(){
     this.data = [];
-    this.stuff.getAllUSRivers("gauley").then((response) =>{
+    // this.stuff.getAllUSRivers("gauley").then((response) =>{
 
-      this.data = response;
+    //   this.data = response;
 
-    });
-    // this.stuff.getRiverDetails("03189600").then((response) =>{
-    //   this.otherData = response.riverData;
-    // })
+    // });
+    this.stuff.getRiverDetails("03263000").then((response) =>{
+      this.otherData = response.riverData;
+    })
   }
 
 }

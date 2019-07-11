@@ -1,5 +1,15 @@
 <div>
-  <div style-='width:95%;position:absolute;height:100%;top:0em;'>
+    <div style='position:absolute;'>
+        <button class='popover-wrapper' style='height:48px;text-align:center;vertical-align:middle;'>
+          <span>Click Me</span>
+          <div class="popover">
+            <ul style="list-style: none;" *ngFor='let a of headers'>
+              <li><input type="checkbox" [(ngModel)]="a.visible">{{a.name}}</li>  
+            </ul>
+          </div>
+        </button>
+    </div>  
+  <div style='position:absolute;padding-left:15%;'>
     <table >
         <thead>
           <tr>
@@ -9,8 +19,10 @@
               <span>{{a.name}}</span>
               <div class="popover">
                 <input type="text">
-                <a href="">Sort Ascending</a>
-                <a href="">Sort Descending</a>
+                <ul style='list-style:none;'>
+                  <li><a href="">Sort Ascending</a></li>
+                  <li><a href="">Sort Descending</a></li>
+                </ul>
               </div>
             </th>   
           </tr>
@@ -24,17 +36,5 @@
           </tr>
         </tbody>
       </table>
-  </div>
-    
-  <div style='width:5%;position:absolute;height:100%;top:0em;'>
-      <button class='popover-wrapper' style='height:48px;text-align:center;vertical-align:middle;'>
-        <span>Click Me</span>
-        <div class="popover">
-          <ul style="list-style: none;" *ngFor='let a of headers'>
-            <li><input type="checkbox" [(ngModel)]="a.visible" ></li>  
-            <li>{{a.name}}</li>
-          </ul>
-        </div>
-      </button>
   </div>
 </div>
